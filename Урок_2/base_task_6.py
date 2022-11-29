@@ -22,21 +22,13 @@
 “ед”: [“шт.”]
 }
 """
-
 feature_name = []
-'''
 while input("Добавить характеристику (y/n)?: ") == 'y':
     feature_name.append(input("Введите название характеристики: "))
-    #feature_value = input("Введите стоимость: ")
-    #features[feature_key] = feature_value
-print(feature_name)
-'''
-feature_name = ['название', 'цена', 'количество', 'eд']
+    # feature_value = input("Введите стоимость: ")
+    # features[feature_key] = feature_value
+
 goods = []
-goods = [(1, {'название': 'компьютер', 'цена': 20000, 'количество': 5, 'eд': 'шт.'}),
-         (2, {'название': 'принтер', 'цена': 6000, 'количество': 2, 'eд': 'шт.'}),
-         (3, {'название': 'сканер', 'цена': 2000, 'количество': 7, 'eд': 'шт.'})]
-'''
 while input("Добавить товар (y/n)?: ") == 'y':
     number = int(input("Введите номер товара: "))
     features = {}
@@ -45,7 +37,6 @@ while input("Добавить товар (y/n)?: ") == 'y':
         feature_value = input(f"Для товара № {number} введите {el}: ")
         features[feature_key] = feature_value
     goods.append(tuple([number, features]))
-'''
 
 print(goods)
 analitics = {}
@@ -54,5 +45,5 @@ for good in goods:
         if feature_key in analitics:
             analitics[feature_key].append(feature_value)
         else:
-         analitics[feature_key] = [feature_value]
+            analitics[feature_key] = [feature_value]
 print(analitics)
