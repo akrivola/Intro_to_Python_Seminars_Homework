@@ -23,6 +23,22 @@ def my_func(x, y):
     return 1 / res
 
 
-print(my_func(3.12, -3))
+def my_func2(x, y):
+    """
+    Raise x to the power of y for integer x only.
+    For real x call my_func()
+    :param x: integer positive number.
+    :param y: integer negative number.
+    :return: real number (x to the power of y).
+    """
+    if x % 10 == 0:
+        res = 0
+        for i in range(abs(y)):
+            for j in range(x):
+                res += x
+        return 1 / res
+    return my_func(x, y)
 
-# не могу реализовать вторым способом для нецелых x, только для целых
+
+print(my_func(3.12, -4))
+print(my_func2(3, -4))
