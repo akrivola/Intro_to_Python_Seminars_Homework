@@ -21,9 +21,9 @@ def collect_values(arg):
     return result, err
 
 
-summa = 0
+my_sum = 0
 err = False
 while not err:
     result, err = collect_values(input("Enter value: ").split(" "))
-    summa += result
-    print(summa)
+    my_sum += result
+    print(my_sum)
