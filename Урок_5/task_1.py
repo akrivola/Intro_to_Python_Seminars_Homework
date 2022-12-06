@@ -50,3 +50,15 @@ for line in content:
     my_sum += salary
 print("Средняя зарплата = ", my_sum / len(content)) 
 '''
+
+# Задание 4
+numbers_dict = {"One": 'Один',
+                "Two": 'Два',
+                "Three": 'Три',
+                "Four": 'Четыре'}
+with open("input_file_4.txt") as in_obj:
+    content = in_obj.read()
+for key in numbers_dict.keys():
+    content = content.replace(key, numbers_dict.get(key))
+with open("out_file_4.txt", "w", encoding='utf-8') as out_obj:
+    out_obj.write(content)
