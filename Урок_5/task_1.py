@@ -29,10 +29,24 @@ while True:
         break
     out_f.write(data + '\n')
 out_f.close()
-'''
+
 # Задание 2
 with open("input_file_2.txt") as f_obj:
     content = f_obj.readlines()
     print(f"Файл {f_obj.name} содержит {len(content)} строк(у):")
     for i, line in enumerate(content, start=1):
         print(f"Строка # {i}: {len(line.split())} слов(а,о)")
+
+# Задание 3
+with open("input_file_3.txt") as f_obj:
+    content = f_obj.readlines()
+my_sum = 0
+print("Оклад < 20000:")
+for line in content:
+    surname, salary = line.split()
+    salary = float(salary)
+    if salary < 20000:
+        print(surname)
+    my_sum += salary
+print("Средняя зарплата = ", my_sum / len(content)) 
+'''
