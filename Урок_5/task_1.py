@@ -20,7 +20,7 @@ Four — 4
 5) Создать (программно) текстовый файл, записать в него программно набор чисел, разделенных
 пробелами. Программа должна подсчитывать сумму чисел в файле и выводить ее на экран.
 """
-'''
+
 # Задание 1
 out_f = open("out_file_1.txt", "w", encoding='utf-8')
 while True:
@@ -48,8 +48,7 @@ for line in content:
     if salary < 20000:
         print(surname)
     my_sum += salary
-print("Средняя зарплата = ", my_sum / len(content)) 
-'''
+print("Средняя зарплата = ", my_sum / len(content))
 
 # Задание 4
 numbers_dict = {"One": 'Один',
@@ -62,3 +61,14 @@ for key in numbers_dict.keys():
     content = content.replace(key, numbers_dict.get(key))
 with open("out_file_4.txt", "w", encoding='utf-8') as out_obj:
     out_obj.write(content)
+
+# Задание 5
+from random import randint
+
+with open("out_file_5.txt", "w", encoding='utf-8') as f_obj:
+    for i in range(21):
+        f_obj.write(str(randint(1, 100)) + ' ')
+
+with open("out_file_5.txt", encoding='utf-8') as f_obj:
+    content = f_obj.read().split()
+print(sum([int(el) for el in content]))
