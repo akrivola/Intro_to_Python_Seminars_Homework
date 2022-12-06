@@ -20,6 +20,7 @@ Four — 4
 5) Создать (программно) текстовый файл, записать в него программно набор чисел, разделенных
 пробелами. Программа должна подсчитывать сумму чисел в файле и выводить ее на экран.
 """
+'''
 # Задание 1
 out_f = open("out_file_1.txt", "w", encoding='utf-8')
 while True:
@@ -28,3 +29,10 @@ while True:
         break
     out_f.write(data + '\n')
 out_f.close()
+'''
+# Задание 2
+with open("input_file_2.txt") as f_obj:
+    content = f_obj.readlines()
+    print(f"Файл {f_obj.name} содержит {len(content)} строк(у):")
+    for i, line in enumerate(content, start=1):
+        print(f"Строка # {i}: {len(line.split())} слов(а,о)")
