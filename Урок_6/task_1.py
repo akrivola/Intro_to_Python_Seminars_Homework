@@ -44,3 +44,28 @@ print(timeit('my_func2(a)', setup='from __main__ import my_func2, a'))
 1.0619966173544526
 
 '''
+
+"""
+Из урока 3 задание 3:
+Реализовать функцию my_func(), которая принимает три позиционных аргумента,
+и возвращает сумму наибольших двух аргументов.
+"""
+
+
+def my_func3(arg1, arg2, arg3):
+    sorted_list = sorted([arg1, arg2, arg3])
+    return sorted_list[1] + sorted_list[2]
+
+
+def my_func4(arg1, arg2, arg3):
+    return arg1 + arg2 + arg3 - min(arg1, arg2, arg3)
+
+
+print(timeit('my_func3(14, 5, 7)', setup='from __main__ import my_func3'))
+print(timeit('my_func4(14, 5, 7)', setup='from __main__ import my_func4'))
+'''
+Отказался от использования списка и посчитал сумму 2-х наибольших аргумента как
+сумму всех минус минимальный аргумент из трех. Удалось добиться небольшого прироста в скорости
+0.41349558904767036
+0.3825996797531843
+'''
