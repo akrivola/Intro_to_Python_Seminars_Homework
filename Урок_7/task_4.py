@@ -33,30 +33,40 @@ class Car:
 
 class TownCar(Car):
     def __init__(self, speed, color, name, is_police):
-        Car((self, speed, color, name, is_police))
+        Car.__init__(self, speed, color, name, is_police)
 
     def show_speed(self):
         Car.show_speed(self)
         if self.speed > 60:
-            print(f'Скорость превышена на {60 - self.speed}')
+            print(f'Скорость превышена на {self.speed - 60}')
 
 class SportCar(Car):
     def __init__(self, speed, color, name, is_police):
-        Car((self, speed, color, name, is_police))
+        Car.__init__(self, speed, color, name, is_police)
 
 class WorkCar(Car):
     def __init__(self, speed, color, name, is_police):
-        Car((self, speed, color, name, is_police))
+        Car.__init__(self, speed, color, name, is_police)
     def show_speed(self):
         Car.show_speed(self)
         if self.speed > 40:
-            print(f'Скорость превышена на {40 - self.speed}')
+            print(f'Скорость превышена на {self.speed - 40}')
 
 class PoliceCar(Car):
     def __init__(self, speed, color, name, is_police = True):
-        Car((self, speed, color, name, is_police))
+        Car.__init__(self, speed, color, name, is_police)
 
 ferrari = SportCar(100, 'красная', 'Феррари', False)
 lada = TownCar(30, 'белая', 'Лада', False)
 solaris = WorkCar(70, 'серая', 'Солярис', False)
 ford = PoliceCar(110, 'белая',  'Форд')
+print(ferrari.turn('налево'))
+print(f'Если {lada.turn("направо")}, тогда {ferrari.stop()}')
+print(f'{solaris.go()} со скоростью {solaris.show_speed()}')
+print(f'{lada.name} - {lada.color}')
+print(f'{lada.name} - полицейская машина? {lada.is_police}')
+print(f'{ford.name} - полицейская машина? {ford.is_police}')
+print(ferrari.show_speed())
+print(lada.show_speed())
+print(ford.is_police())
+print(ford.show_speed())
