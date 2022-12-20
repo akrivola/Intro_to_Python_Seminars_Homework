@@ -6,6 +6,8 @@ income (доход). Последний атрибут должен быть з�
 Проверить работу примера на реальных данных (создать экземпляры класса Position, передать данные, проверить значения
 атрибутов, вызвать методы экземпляров).
 '''
+
+
 class Worker:
     def __init__(self, name, surname, position, wage, bonus):
         self.name = name
@@ -17,17 +19,21 @@ class Worker:
 class Position(Worker):
 
     def __init__(self, name, surname, position, wage, bonus):
-        super().__init__(name, surname, position, wage, bonus)
+        Worker.__init__(self, name, surname, position, wage, bonus)
 
     def get_full_name(self):
         return self.name + ' ' + self.surname
 
     def get_total_income(self):
         return self._income.get('wage') + self._income.get('bonus')
-        # return f'{sum(self._income.values())}'
 
 
-a = Position('Peter', 'The Great', 'Beekeeper', 100000, 25000)
-print(a.get_full_name())
-print(a.position)
-print(a.get_total_income())
+manager = Position('Иван', 'Петров', 'Менеджер', 30000, 120000)
+bookkeaper = Position('Ирина', 'Васильева', 'Бухгалтер', 45000, 125000)
+print(manager.get_full_name())
+print(manager.position)
+print(manager.get_total_income())
+
+print(bookkeaper.get_full_name())
+print(bookkeaper.position)
+print(bookkeaper.get_total_income())
