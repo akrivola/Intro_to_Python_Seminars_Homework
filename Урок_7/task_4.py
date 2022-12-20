@@ -7,3 +7,56 @@
 Создайте экземпляры классов, передайте значения атрибутов. Выполните доступ к атрибутам, выведите результат.
 Выполните вызов методов и также покажите результат.
 '''
+
+
+class Car:
+    # аттрибуты
+    def __init__(self, speed, color, name, is_police):
+        self.speed = speed
+        self.color = color
+        self.name = name
+        self.is_police = is_police
+
+    # методы
+    def go(self):
+        return f'{self.name} поехала'
+
+    def stop(self):
+        return f'{self.name} остановилась'
+
+    def turn(self, direction):
+        self.direction = direction
+        return f'{self.name} повернула {direction}'
+
+    def show_speed(self):
+        return f'Текущая скорость {self.name} - {self.speed} км/ч'
+
+class TownCar(Car):
+    def __init__(self, speed, color, name, is_police):
+        Car((self, speed, color, name, is_police))
+
+    def show_speed(self):
+        Car.show_speed(self)
+        if self.speed > 60:
+            print(f'Скорость превышена на {60 - self.speed}')
+
+class SportCar(Car):
+    def __init__(self, speed, color, name, is_police):
+        Car((self, speed, color, name, is_police))
+
+class WorkCar(Car):
+    def __init__(self, speed, color, name, is_police):
+        Car((self, speed, color, name, is_police))
+    def show_speed(self):
+        Car.show_speed(self)
+        if self.speed > 40:
+            print(f'Скорость превышена на {40 - self.speed}')
+
+class PoliceCar(Car):
+    def __init__(self, speed, color, name, is_police = True):
+        Car((self, speed, color, name, is_police))
+
+ferrari = SportCar(100, 'красная', 'Феррари', False)
+lada = TownCar(30, 'белая', 'Лада', False)
+solaris = WorkCar(70, 'серая', 'Солярис', False)
+ford = PoliceCar(110, 'белая',  'Форд')
