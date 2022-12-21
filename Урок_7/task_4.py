@@ -31,42 +31,46 @@ class Car:
     def show_speed(self):
         return f'Текущая скорость {self.name} - {self.speed} км/ч'
 
+
 class TownCar(Car):
     def __init__(self, speed, color, name, is_police):
         Car.__init__(self, speed, color, name, is_police)
 
     def show_speed(self):
-        Car.show_speed(self)
         if self.speed > 60:
-            print(f'Скорость превышена на {self.speed - 60}')
+            return f'{self.speed} км/ч, что превышает установленный лимит на {self.speed - 60} км/ч'
+        return f'{self.speed} км/ч'
+
 
 class SportCar(Car):
     def __init__(self, speed, color, name, is_police):
         Car.__init__(self, speed, color, name, is_police)
 
+
 class WorkCar(Car):
     def __init__(self, speed, color, name, is_police):
         Car.__init__(self, speed, color, name, is_police)
+
     def show_speed(self):
-        Car.show_speed(self)
         if self.speed > 40:
-            print(f'Скорость превышена на {self.speed - 40}')
+            return f'{self.speed} км/ч, что превышает установленный лимит на {self.speed - 40} км/ч'
+        return f'{self.speed} км/ч'
+
 
 class PoliceCar(Car):
-    def __init__(self, speed, color, name, is_police = True):
+    def __init__(self, speed, color, name, is_police=True):
         Car.__init__(self, speed, color, name, is_police)
 
+
 ferrari = SportCar(100, 'красная', 'Феррари', False)
-lada = TownCar(30, 'белая', 'Лада', False)
+lada = TownCar(65, 'белая', 'Лада', False)
 solaris = WorkCar(70, 'серая', 'Солярис', False)
-ford = PoliceCar(110, 'белая',  'Форд')
+ford = PoliceCar(110, 'белая', 'Форд')
 print(ferrari.turn('налево'))
 print(f'Если {lada.turn("направо")}, тогда {ferrari.stop()}')
 print(f'{solaris.go()} со скоростью {solaris.show_speed()}')
+print(f'{lada.turn("налево")} со скоростью {lada.show_speed()}')
 print(f'{lada.name} - {lada.color}')
 print(f'{lada.name} - полицейская машина? {lada.is_police}')
 print(f'{ford.name} - полицейская машина? {ford.is_police}')
 print(ferrari.show_speed())
-print(lada.show_speed())
-print(ford.is_police())
-print(ford.show_speed())
