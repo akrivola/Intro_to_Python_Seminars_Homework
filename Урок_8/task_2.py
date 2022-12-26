@@ -111,7 +111,7 @@ class Cell:
         if self.quantity - other.quantity > 0:
             return Cell(int(self.quantity - other.quantity))
         else:
-            return 'Операция вычитания невозможна'
+            return 'Разность отрицательна, поэтому операция не выполняется'
     def __mul__(self, other):
         return Cell(int(self.quantity * other.quantity))
 
