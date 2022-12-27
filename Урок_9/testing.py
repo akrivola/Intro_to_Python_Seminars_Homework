@@ -15,6 +15,7 @@ from Урок_9.for_testing.lesson_3_task_5 import collect_values
 from Урок_9.for_testing.lesson_7_task_1 import TrafficLight
 from Урок_9.for_testing.lesson_9_task_3 import DivisionByNull, Divide
 from Урок_9.for_testing.lesson_1_task_7_additional import weekend
+from Урок_9.for_testing.lesson_7_task_3 import Worker, Position
 
 
 class TestDivision(unittest.TestCase):
@@ -61,6 +62,10 @@ class TestDivision(unittest.TestCase):
     def test_weekend(self):
         yes = 'да', 'Да', 'yes', 'Yes', 'qui', 'Qui'
         self.assertIn(weekend(6), yes)
+
+    def test_classes(self):
+        my_position = Position('John','Doe','support worker', 1000, 130)
+        self.assertIsInstance(my_position, Worker)
 
 
 # Запустить тестирование
