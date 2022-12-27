@@ -13,7 +13,8 @@ from Урок_9.for_testing.lesson_3_task_1 import division
 from Урок_9.for_testing.lesson_3_task_3 import my_func
 from Урок_9.for_testing.lesson_3_task_5 import collect_values
 from Урок_9.for_testing.lesson_7_task_1 import TrafficLight
-import Урок_9.for_testing.lesson_9_task_3
+from Урок_9.for_testing.lesson_9_task_3 import DivisionByNull, Divide
+from Урок_9.for_testing.lesson_1_task_7_additional import weekend
 
 
 class TestDivision(unittest.TestCase):
@@ -54,9 +55,13 @@ class TestDivision(unittest.TestCase):
         result = TrafficLight()
         self.assertIsInstance(result, TrafficLight)
 
-    def test_Exception1(self):
-        with self.assertRaises(Exception):
-            print(Divide(5, 1))
+    def test_raise_Exception(self):
+        self.assertRaises(DivisionByNull, Divide, 5, 0)
+
+    def test_weekend(self):
+        yes = 'да', 'Да', 'yes', 'Yes', 'qui', 'Qui'
+        self.assertIn(weekend(6), yes)
+
 
 # Запустить тестирование
 if __name__ == '__main__':

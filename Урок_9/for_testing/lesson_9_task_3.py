@@ -11,13 +11,13 @@ class DivisionByNull(Exception):
 
 
 def Divide(dividend, divisor):
-    try:
+#    try:
         if divisor == 0:
             raise DivisionByNull
-    except DivisionByNull as err:
+'''    except DivisionByNull as err:
         return err.txt
     else:
-        return f"Частное от деление {dividend} на {divisor} равно {dividend / divisor}"
+        return f"Частное от деление {dividend} на {divisor} равно {dividend / divisor}"'''
 
 
 if __name__ == '__main__':
