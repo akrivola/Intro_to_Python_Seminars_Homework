@@ -8,14 +8,14 @@
 '''
 import unittest
 
-import Урок_9.for_testing.lesson_3_task_4
-from Урок_9.for_testing.lesson_3_task_1 import division
-from Урок_9.for_testing.lesson_3_task_3 import my_func
-from Урок_9.for_testing.lesson_3_task_5 import collect_values
-from Урок_9.for_testing.lesson_7_task_1 import TrafficLight
-from Урок_9.for_testing.lesson_9_task_3 import DivisionByNull, Divide
-from Урок_9.for_testing.lesson_1_task_7_additional import weekend
-from Урок_9.for_testing.lesson_7_task_3 import Worker, Position
+from lesson_3_task_4 import my_func1, my_func2
+from lesson_3_task_1 import division
+from lesson_3_task_3 import my_func
+from lesson_3_task_5 import collect_values
+from lesson_7_task_1 import TrafficLight
+from lesson_9_task_3 import DivisionByNull, Divide
+from lesson_1_task_7_additional import weekend
+from lesson_7_task_3 import Worker, Position
 
 
 class TestDivision(unittest.TestCase):
@@ -46,11 +46,10 @@ class TestDivision(unittest.TestCase):
         self.assertTrue(err)
 
     def test_my_func(self):
-        self.assertEqual(Урок_9.for_testing.lesson_3_task_3.my_func(14, 5, 7), 21)
+        self.assertEqual(my_func(14, 5, 7), 21)
 
     def test_my_func_and_2(self):
-        self.assertEqual(Урок_9.for_testing.lesson_3_task_4.my_func(5, 7),
-                         Урок_9.for_testing.lesson_3_task_4.my_func2(5, 7))
+        self.assertEqual(my_func1(5, 7), my_func2(5, 7))
 
     def test_class(self):
         result = TrafficLight()
