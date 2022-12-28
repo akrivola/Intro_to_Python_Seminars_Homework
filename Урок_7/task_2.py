@@ -15,6 +15,6 @@ class Road:
     def asphalt(self):
         return self._width * self._length * 25 * 0.05
 
-
-my_road = Road(5000, 20)
-print(my_road.asphalt())
+if __name__ == '__main__':
+    my_road = Road(5000, 20)
+    print(my_road.asphalt())

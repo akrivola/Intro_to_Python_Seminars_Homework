@@ -27,13 +27,13 @@ class Position(Worker):
     def get_total_income(self):
         return self._income.get('wage') + self._income.get('bonus')
 
+if __name__ == '__main__':
+    manager = Position('Иван', 'Петров', 'Менеджер', 30000, 120000)
+    bookkeaper = Position('Ирина', 'Васильева', 'Бухгалтер', 45000, 125000)
+    print(manager.get_full_name())
+    print(manager.position)
+    print(manager.get_total_income())
 
-manager = Position('Иван', 'Петров', 'Менеджер', 30000, 120000)
-bookkeaper = Position('Ирина', 'Васильева', 'Бухгалтер', 45000, 125000)
-print(manager.get_full_name())
-print(manager.position)
-print(manager.get_total_income())
-
-print(bookkeaper.get_full_name())
-print(bookkeaper.position)
-print(bookkeaper.get_total_income())
+    print(bookkeaper.get_full_name())
+    print(bookkeaper.position)
+    print(bookkeaper.get_total_income())
