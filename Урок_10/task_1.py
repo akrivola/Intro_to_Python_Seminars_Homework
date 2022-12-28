@@ -51,5 +51,8 @@ class improved_cls_Position(Position):
 
 if __name__ == "__main__":
     employee = improved_cls_Position("Иван", "Иванов", "Менеджер", 50000, 30000)
+    employee2 = improved_cls_Position("Наталья", "Иванова", "Бухгалтер", 60000, 40000)
     print(employee.get_full_name())
     print(employee.get_total_income())
+    print(employee2.get_full_name())
+    print(employee2.get_total_income())
