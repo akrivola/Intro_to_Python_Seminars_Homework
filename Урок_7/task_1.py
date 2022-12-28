@@ -26,6 +26,6 @@ class TrafficLight:
                 break
         pass
 
-
-my_traffic_light = TrafficLight()
-my_traffic_light.running()
+if __name__ == '__main__':
+    my_traffic_light = TrafficLight()
+    my_traffic_light.running()

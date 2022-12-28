@@ -39,6 +39,6 @@ def my_func2(x, y):
         return 1 / res
     return my_func(x, y)
 
-
-print(my_func(3.12, -4))
-print(my_func2(3, -4))
+if __name__ == '__main__':
+    print(my_func(3.12, -4))
+    print(my_func2(3, -4))

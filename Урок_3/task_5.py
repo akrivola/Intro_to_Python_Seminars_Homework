@@ -20,10 +20,10 @@ def collect_values(arg):
             break
     return result, err
 
-
-my_sum = 0
-err = False
-while not err:
-    result, err = collect_values(input("Enter value: ").split(" "))
-    my_sum += result
-    print(my_sum)
+if __name__ == '__main__':
+    my_sum = 0
+    err = False
+    while not err:
+        result, err = collect_values(input("Enter value: ").split(" "))
+        my_sum += result
+        print(my_sum)

@@ -17,5 +17,5 @@ def division(arg1, arg2):
     except ZeroDivisionError:
         return "Ошибка: деление на 0"
 
-
-print(division(float(input("Введите число #1:")), float(input("Введите число #2:"))))
+if __name__ == '__main__':
+    print(division(float(input("Введите число #1:")), float(input("Введите число #2:"))))
