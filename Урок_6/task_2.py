@@ -5,7 +5,19 @@
 """
 from memory_profiler import memory_usage
 
+'''
+    Скрипт #1
+    Берем функцию my_func из урока 3 задание 4. Ф-ия возводит в отрицательную степень.
+    Пишем функцию my_func_lists, которая выполняет my_func на списком из аргументов и возвращает список,
+    чтобы максимально загрузить память. Ф-ия my_func_lists использует списки и добавление в конец списка.
+    Улучшаем функцию my_func_lists, добавляя конструктор (ф-ия improved_my_func_lists)
+    Результат замеров памяти:
+    improved_my_func_lists - 
+    
+    
+'''
 from Урок_3.task_4 import my_func
+
 
 def memory(func):
     def wrapper(*args, **kwargs):
@@ -15,13 +27,23 @@ def memory(func):
         mem_diff = m2[0] - m1[0]
         print(f"Выполнение заняло {mem_diff} Mib памяти")
         return res
+
     return wrapper
 
+
 @memory
-def my_func_lists(x, y):
+def my_func_lists(arg):
     res = []
-    for i in x:
-        res.append(my_func(i, y))
+    for i in arg:
+        res.append(my_func(i, -3))
     return res
 
-my_func_lists(list(range(10000)), -3)
+
+@memory
+def improved_my_func_lists(arg):
+    for i in arg:
+        yield my_func(i, -3)
+
+
+#my_func_lists(list(range(1, 10000)))
+improved_my_func_lists(list(range(1, 10000)))
