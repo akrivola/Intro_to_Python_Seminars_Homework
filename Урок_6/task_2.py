@@ -54,21 +54,22 @@ def improved_my_func_lists(arg):
 
 '''
     Скрипт #2
-    Берем функцию my_func из урока 3 задание 4. Ф-ия возводит в отрицательную степень.
-    Пишем функцию my_func_lists, которая выполняет my_func на списком из аргументов и возвращает список,
-    чтобы максимально загрузить память. Ф-ия my_func_lists использует списки и добавление в конец списка.
-    Улучшаем функцию my_func_lists, добавляя конструктор (ф-ия improved_my_func_lists)
+    Берем функцию switch из урока 2 задание 2. Ф-ия меняет местами элементы списка.
+    Улучшаем эту функцию, используя массивы Numpy вместо списка - ф-ия improved_switch.
     Результат замеров памяти:
-    my_func_lists - Выполнение заняло 0.48046875 Mib памяти
-    improved_my_func_lists - Выполнение заняло 0.0078125 Mib памяти
+    switch - Выполнение заняло 0.0078125 Mib памяти
+    improved_switch - Выполнение заняло 0.00390625 Mib памяти
 
-    В итоге, использование конструктора вместо добавления в конец списка занимает меньше памяти.
+    В итоге, использование Numpy вместо списков занимает меньше памяти.
 
 '''
-from numpy import array
+
 from Урок_2.base_task_2 import switch
 
+# оборачиваем switch в декоратор для измерения памяти
 switch_mem = memory(switch)
+
+from numpy import array
 
 
 @memory
@@ -78,6 +79,5 @@ def improved_switch(countries):
             countries[index], countries[index - 1] = countries[index - 1], countries[index]
     return countries
 
-
 # switch_mem([i for i in range(100000)])
-improved_switch(array([i for i in range(10000)]))
+# improved_switch(array([i for i in range(10000)]))
