@@ -21,9 +21,9 @@
 """
 def my_output(words):
     for word in words:
-        print(type(word), word)
 
-if __name__ == "__main__":
+
+if __name__ == "__main__":print(f"Тип: {type(word)} содержимое:{word}")
     words = ['разработка', 'сокет', 'декоратор']
     my_output(words)
 
