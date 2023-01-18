@@ -13,7 +13,7 @@
 
 def my_output(words):
     for word in words:
-        print(f"Тип: {type(word)} содержимое:{word} длина:{len(word)}")
+        print(f"Тип: {type(word)} содержимое: {word} длина: {len(word)}")
 
 if __name__ == "__main__":
     words = [b'class', b'function', b'method']

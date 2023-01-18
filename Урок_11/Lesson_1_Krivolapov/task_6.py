@@ -23,3 +23,17 @@
 
 НАРУШЕНИЕ обозначенных условий - задание не выполнено!!!
 """
+import chardet
+
+try:
+    # пробуем открыть явно в Unicode (utf-8)
+    with open('test_file.txt', encoding='utf-8') as file:
+        for el_str in file:
+            print(el_str, end='')
+except UnicodeDecodeError:
+    # если файл не в Unicode (utf-8), выполняем перекодировку
+    with open('test_file.txt', 'rb') as file:
+        for line in file:
+            result = chardet.detect(line)
+            line = line.decode(result['encoding']).encode('utf-8')
+            print(line.decode('utf-8'), end='')
