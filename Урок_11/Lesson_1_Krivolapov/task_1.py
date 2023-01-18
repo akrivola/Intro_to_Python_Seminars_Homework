@@ -19,11 +19,14 @@
 
 Все другие варианты сдачи приму только один раз, потом буду ставить НЕ СДАНО
 """
+
+
 def my_output(words):
     for word in words:
+        print(f"Тип: {type(word)} содержимое:{word}")
 
 
-if __name__ == "__main__":print(f"Тип: {type(word)} содержимое:{word}")
+if __name__ == "__main__":
     words = ['разработка', 'сокет', 'декоратор']
     my_output(words)
 
@@ -32,5 +35,5 @@ if __name__ == "__main__":print(f"Тип: {type(word)} содержимое:{wor
         '\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430',
         '\u0441\u043e\u043a\u0435\u0442',
         '\u0434\u0435\u043a\u043e\u0440\u0430\u0442\u043e\u0440'
-        ]
+    ]
     my_output(words_unicode)
